@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --dark-cyan-h: hsl(158, 38%, 16%);
+  --cream: hsl(30, 38%, 92%);
+
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  --fraunces: "Fraunces", serif;
+  --montserrat: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--montserrat);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cream);
+}
+
+.card {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  height: 640px;
+}
+
+.card__img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card__img--desktop {
+  display: none;
+}
+
+.card__details {
+  padding: 1.5em;
+}
+
+.card__category {
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+}
+
+.card__title {
+  font-family: var(--fraunces);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.card__paragraph {
+  line-height: 1.6;
+  margin: 20px 0;
+  font-size: 14.5px;
+  color: var(--dark-grayish-blue);
+}
+
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  margin-bottom: 1em;
+}
+
+.price__now {
+  font-family: var(--fraunces);
+  color: var(--dark-cyan);
+  font-size: 35px;
+}
+
+.price__before {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+}
+
+.card__cta {
+  border: none;
+  width: 100%;
+  padding: 1.3em 0;
+  background-color: var(--dark-cyan);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+}
+
+.card__cta:hover {
+  background-color: var(--dark-cyan-h);
+}
+
+.card__text {
+  color: var(--white);
+  font-weight: 700;
+}
+
+@media (min-width: 375px) {
+  .card {
+    max-width: 600px;
+    height: 447px;
+    flex-direction: row;
+  }
+
+  .card__details {
+    padding: 2em;
+  }
+
+  .card__img {
+    display: none;
+  }
+  .card__img--desktop {
+    display: block;
+    object-fit: cover;
+    width: 297px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+}
